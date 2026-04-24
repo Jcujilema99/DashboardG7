@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard NCC 1996–2023 | Grupo 7 UNEMI</title>
+  <meta name="description" content="Dashboard analítico e interactivo sobre los Niveles de Concreción Curricular y los hitos curriculares del Ecuador 1996-2023." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="progress-bar" id="progressBar"></div>
+
+  <header class="site-header" id="siteHeader">
+    <a class="brand" href="#portada" aria-label="Ir a portada">
+      <span class="brand-symbol">∑</span>
+      <span>
+        <strong>UNEMI POSGRADOS</strong>
+        <small>NCC · Matemática · 1996–2023</small>
+      </span>
+    </a>
+
+    <button class="menu-btn" id="menuBtn" type="button" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="main-nav" id="mainNav">
+      <a href="#portada">Portada</a>
+      <a href="#objetivo">Objetivo</a>
+      <a href="#diseno">Diseño</a>
+      <a href="#hitos">Hitos</a>
+      <a href="#ncc">NCC</a>
+      <a href="#matematica">Matemática</a>
+      <a href="#concrecion">Meso/Micro</a>
+      <a href="#entropia">Entropía</a>
+      <a href="#derivada">Derivada</a>
+      <a href="#ia">IA ética</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- PORTADA -->
+    <section class="cover" id="portada">
+      <div class="unemi-frame">
+        <div class="unemi-topline">
+          <div class="unemi-logo">
+            <span class="logo-mark"></span>
+            <div>
+              <strong>UNEMI</strong>
+              <small>POSGRADOS</small>
+            </div>
+          </div>
+          <div class="top-lines"></div>
+        </div>
+
+        <div class="cover-center reveal">
+          <p class="cover-kicker">Maestría en Educación en Bachillerato con mención en Pedagogía de la Matemática</p>
+          <h1>Dashboard analítico de los Niveles de Concreción Curricular y reformas curriculares del Ecuador 1996–2023</h1>
+          <p class="cover-subtitle">Análisis macro, meso y micro de la evolución curricular de Matemática, con modelización institucional, inclusión educativa, gráfico de entropía y reflexión crítica.</p>
+
+          <div class="cover-grid">
+            <article>
+              <span>Módulo</span>
+              <strong>Planificación, Innovación y Gestión al Cambio Curricular</strong>
+            </article>
+            <article>
+              <span>Tarea grupal</span>
+              <strong>Ingeniería de los NCC e hitos curriculares</strong>
+            </article>
+            <article>
+              <span>Docente tutor virtual</span>
+              <strong>Castro Gomez Andrea Zullay</strong>
+            </article>
+            <article>
+              <span>Grupo</span>
+              <strong>7</strong>
+            </article>
+          </div>
+
+          <div class="students-card">
+            <span>Maestrantes</span>
+            <div class="student-list">
+              <strong>Jonathan Cujilema</strong>
+              <strong>Lourdes Delgado</strong>
+              <strong>Paul Zambrano</strong>
+              <strong>Jorge Guevara</strong>
+              <strong>Jorge Soria</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="unemi-footer">
+          <strong>LA MEJOR VERSIÓN DE TI</strong>
+          <span>www.unemi.edu.ec/index.php/maestrias/</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESUMEN EJECUTIVO -->
+    <section class="section hero" id="objetivo">
+      <div class="section-title reveal">
+        <span class="section-number">01</span>
+        <div>
+          <p class="eyebrow">Objetivo académico</p>
+          <h2>Analizar, comparar y sintetizar los cambios curriculares del Ecuador</h2>
+        </div>
+      </div>
+
+      <div class="hero-layout">
+        <article class="hero-card reveal">
+          <p>
+            Este dashboard presenta una lectura técnica de los Niveles de Concreción Curricular y de las principales reformas y actualizaciones curriculares del Ecuador entre 1996 y 2023, con énfasis en Bachillerato y en el área de Matemática.
+          </p>
+          <div class="pill-row">
+            <span>Macro</span>
+            <span>Meso</span>
+            <span>Micro</span>
+            <span>Álgebra</span>
+            <span>Geometría</span>
+            <span>Estadística</span>
+          </div>
+        </article>
+
+        <div class="objective-cards reveal">
+          <article>
+            <strong>Analizar</strong>
+            <p>Reformas, actualizaciones, priorizaciones y enfoque competencial.</p>
+          </article>
+          <article>
+            <strong>Comparar</strong>
+            <p>Carga horaria, bloques matemáticos y relación Macro–Meso–Micro.</p>
+          </article>
+          <article>
+            <strong>Sintetizar</strong>
+            <p>Hallazgos en un producto digital interactivo con evidencia académica.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- DISEÑO DEL DASHBOARD -->
+    <section class="section muted" id="diseno">
+      <div class="section-title reveal">
+        <span class="section-number">02</span>
+        <div>
+          <p class="eyebrow">Diseño del dashboard interactivo</p>
+          <h2>Una página de aterrizaje académica, navegable y con visualizaciones propias</h2>
+        </div>
+      </div>
+
+      <div class="design-grid reveal">
+        <article class="design-card selected">
+          <div class="icon">⌘</div>
+          <h3>HTML + CSS + JavaScript</h3>
+          <p>Producto interactivo desarrollado como micrositio web: navegación fija, tarjetas dinámicas, filtros, tabs, gráfico Canvas y simulador de cambio curricular.</p>
+        </article>
+        <article class="design-card">
+          <div class="icon">γ</div>
+          <h3>Equivalente a Gamma</h3>
+          <p>La estructura funciona como landing page profesional, pero con mayor control visual y técnico sobre cada apartado del análisis.</p>
+        </article>
+        <article class="design-card">
+          <div class="icon">λ</div>
+          <h3>Equivalente a Claude Artifacts</h3>
+          <p>El dashboard demuestra capacidad técnica al presentar la evolución curricular mediante código y componentes interactivos.</p>
+        </article>
+      </div>
+
+      <div class="evidence-strip reveal">
+        <span>Interactividad incluida:</span>
+        <button type="button" data-jump="#hitos">Línea de tiempo</button>
+        <button type="button" data-jump="#matematica">Tabla filtrable</button>
+        <button type="button" data-jump="#concrecion">Tabs Meso/Micro</button>
+        <button type="button" data-jump="#entropia">Gráfico entropía</button>
+        <button type="button" data-jump="#derivada">Simulador derivada</button>
+      </div>
+    </section>
+
+    <!-- HITOS -->
+    <section class="section" id="hitos">
+      <div class="section-title reveal">
+        <span class="section-number">03</span>
+        <div>
+          <p class="eyebrow">Análisis de los 5 hitos · Pertinencia matemática</p>
+          <h2>Línea de tiempo 1996–2023 con lectura Macro, Meso y Micro</h2>
+        </div>
+      </div>
+
+      <div class="timeline-shell reveal">
+        <div class="timeline-years" id="timelineYears"></div>
+        <article class="timeline-detail" id="timelineDetail"></article>
+      </div>
+    </section>
+
+    <!-- NCC -->
+    <section class="section muted" id="ncc">
+      <div class="section-title reveal">
+        <span class="section-number">04</span>
+        <div>
+          <p class="eyebrow">Niveles de concreción curricular</p>
+          <h2>Del currículo nacional a la planificación inclusiva de aula</h2>
+        </div>
+      </div>
+
+      <div class="ncc-flow reveal">
+        <button class="flow-node active" type="button" data-level="macro">
+          <strong>Macro</strong><span>Normativa nacional</span>
+        </button>
+        <span class="flow-arrow">→</span>
+        <button class="flow-node" type="button" data-level="meso">
+          <strong>Meso</strong><span>PCI institucional</span>
+        </button>
+        <span class="flow-arrow">→</span>
+        <button class="flow-node" type="button" data-level="micro">
+          <strong>Micro</strong><span>Aula inclusiva</span>
+        </button>
+      </div>
+
+      <article class="ncc-panel reveal" id="nccPanel"></article>
+    </section>
+
+    <!-- MATEMÁTICA -->
+    <section class="section" id="matematica">
+      <div class="section-title reveal">
+        <span class="section-number">05</span>
+        <div>
+          <p class="eyebrow">Carga horaria y bloques matemáticos</p>
+          <h2>Comparación técnica de Álgebra, Geometría y Estadística</h2>
+        </div>
+      </div>
+
+      <div class="math-toolbar reveal">
+        <div>
+          <label for="mathSearch">Buscar dentro de la matriz técnica</label>
+          <input id="mathSearch" type="search" placeholder="Ej.: 2016, competencias, álgebra, estadística, micro..." />
+        </div>
+        <select id="mathFilter" aria-label="Filtrar por hito">
+          <option value="todos">Todos los hitos</option>
+          <option value="1996">1996</option>
+          <option value="2010">2010</option>
+          <option value="2016">2016</option>
+          <option value="2021">2021</option>
+          <option value="2023">2023</option>
+        </select>
+      </div>
+
+      <div class="table-card reveal">
+        <table class="math-table">
+          <thead>
+            <tr>
+              <th>Hito</th>
+              <th>Carga horaria / organización</th>
+              <th>Álgebra y funciones</th>
+              <th>Geometría y medida</th>
+              <th>Estadística y probabilidad</th>
+              <th>Relación Macro–Meso–Micro</th>
+            </tr>
+          </thead>
+          <tbody id="mathTableBody"></tbody>
+        </table>
+      </div>
+
+      <div class="precision-note reveal">
+        <strong>Criterio técnico:</strong> el análisis de carga horaria no se presenta como dato aislado, sino como relación entre tiempo oficial, organización del Bachillerato, autonomía institucional y profundidad de los bloques matemáticos.
+      </div>
+    </section>
+
+    <!-- MESO/MICRO -->
+    <section class="section muted" id="concrecion">
+      <div class="section-title reveal">
+        <span class="section-number">06</span>
+        <div>
+          <p class="eyebrow">Resolución de la ecuación de concreción</p>
+          <h2>PCI rural vs. urbano y sprint de planificación para discalculia</h2>
+        </div>
+      </div>
+
+      <div class="concretion-tabs reveal">
+        <button class="tab-btn active" type="button" data-tab="rural">PCI rural</button>
+        <button class="tab-btn" type="button" data-tab="urbano">PCI urbano</button>
+        <button class="tab-btn" type="button" data-tab="sprint">Sprint discalculia</button>
+        <button class="tab-btn" type="button" data-tab="evaluacion">Evaluación inclusiva</button>
+      </div>
+
+      <article class="concretion-panel reveal" id="concretionPanel"></article>
+    </section>
+
+    <!-- ENTROPÍA -->
+    <section class="section" id="entropia">
+      <div class="section-title reveal">
+        <span class="section-number">07</span>
+        <div>
+          <p class="eyebrow">Gráfico de elaboración propia</p>
+          <h2>Entropía curricular: Complejidad vs. Flexibilidad</h2>
+        </div>
+      </div>
+
+      <div class="entropy-layout reveal">
+        <div class="chart-wrap">
+          <canvas id="entropyCanvas" width="960" height="560" aria-label="Gráfico de entropía curricular"></canvas>
+          <div class="chart-tooltip" id="chartTooltip"></div>
+        </div>
+        <aside class="entropy-explain">
+          <span class="formula-title">Modelo simbólico</span>
+          <strong class="formula">E = C × F</strong>
+          <p>C = complejidad pedagógica. F = flexibilidad curricular. A mayor E, mayor exigencia profesional para convertir el currículo en aprendizaje real.</p>
+          <div class="slider-box">
+            <label for="entropySpeed">Animación del gráfico</label>
+            <input id="entropySpeed" type="range" min="1" max="5" value="3" />
+            <button id="restartChart" type="button">Reiniciar visualización</button>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- DERIVADA -->
+    <section class="section muted" id="derivada">
+      <div class="section-title reveal">
+        <span class="section-number">08</span>
+        <div>
+          <p class="eyebrow">Reflexión crítica</p>
+          <h2>La derivada del cambio: límite de la enseñanza matemática</h2>
+        </div>
+      </div>
+
+      <div class="derivative-layout reveal">
+        <article class="critical-card">
+          <h3>Reflexión profunda</h3>
+          <p>
+            La mejora curricular no depende únicamente de emitir nuevos documentos oficiales. Depende de la velocidad con que el sistema logra transformar la normativa en prácticas docentes sostenibles. Cuando el currículo cambia más rápido que la formación docente, los recursos didácticos y la evaluación formativa, aparece una brecha de implementación: el documento avanza, pero el aula no necesariamente cambia al mismo ritmo.
+          </p>
+          <p>
+            En Matemática, esta brecha se evidencia cuando las competencias se declaran en el nivel macro, pero en el nivel micro se continúa evaluando solo procedimientos mecánicos. Por ello, el límite o asíntota del cambio no es la cantidad de reformas, sino la capacidad institucional de acompañar al docente para convertir flexibilidad curricular en aprendizaje medible, inclusivo y contextualizado.
+          </p>
+          <div class="principle-card">
+            <span>Principio lógico-matemático para el currículo 2030</span>
+            <strong>El aprendizaje matemático será máximo cuando la flexibilidad curricular, la formación docente, los recursos y la evaluación competencial crezcan de manera proporcional.</strong>
+          </div>
+        </article>
+
+        <aside class="simulator-card">
+          <h3>Simulador de implementación</h3>
+          <p class="muted-text">Ajusta las variables y observa el índice de cambio curricular efectivo.</p>
+
+          <div class="sim-row">
+            <label for="sCurriculum">Cambio curricular</label>
+            <input id="sCurriculum" type="range" min="1" max="10" value="8" />
+            <output id="oCurriculum">8</output>
+          </div>
+          <div class="sim-row">
+            <label for="sTeacher">Formación docente</label>
+            <input id="sTeacher" type="range" min="1" max="10" value="6" />
+            <output id="oTeacher">6</output>
+          </div>
+          <div class="sim-row">
+            <label for="sResources">Recursos</label>
+            <input id="sResources" type="range" min="1" max="10" value="5" />
+            <output id="oResources">5</output>
+          </div>
+          <div class="sim-row">
+            <label for="sEvaluation">Evaluación competencial</label>
+            <input id="sEvaluation" type="range" min="1" max="10" value="6" />
+            <output id="oEvaluation">6</output>
+          </div>
+
+          <div class="result-meter">
+            <span id="resultLabel">Cambio efectivo</span>
+            <strong id="resultValue">0%</strong>
+            <div class="meter"><span id="meterFill"></span></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- IA Y FUENTES -->
+    <section class="section" id="ia">
+      <div class="section-title reveal">
+        <span class="section-number">09</span>
+        <div>
+          <p class="eyebrow">Uso ético y técnico de IA</p>
+          <h2>Herramientas utilizadas, evidencias y fuentes de verificación</h2>
+        </div>
+      </div>
+
+      <div class="ai-layout reveal">
+        <div class="ai-grid" id="aiGrid"></div>
+        <article class="ethics-box">
+          <h3>Declaración ética</h3>
+          <p>
+            Las herramientas de inteligencia artificial se utilizaron como apoyo para organizar, contrastar, diseñar y visualizar información. La revisión final, contextualización pedagógica y responsabilidad académica corresponden al equipo de maestrantes.
+          </p>
+          <ul>
+            <li>Se declara el uso de más de tres herramientas de IA.</li>
+            <li>Se diferencian fuentes oficiales, apoyo de IA y producción propia.</li>
+            <li>Se evidencian capturas, prompts y resultados relevantes.</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="sources reveal">
+        <h3>Fuentes base para validar el contenido</h3>
+        <div id="sourcesGrid" class="sources-grid"></div>
+      </div>
+    </section>
+  </main>
+
+  <button class="back-top" id="backTop" type="button" aria-label="Volver arriba">↑</button>
+
+  <footer class="footer">
+    <p>Dashboard académico · Grupo 7 · UNEMI Posgrados · Pedagogía de la Matemática</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
