@@ -1,533 +1,495 @@
-const hitos = [
-  {
-    year: "1996",
-    title: "Reforma Curricular Consensuada",
-    focus: "Transición hacia una base nacional común con énfasis en contenidos mínimos y destrezas fundamentales.",
-    badges: ["Contenido", "Secuencia prescrita", "Flexibilidad baja"],
-    macro: "El nivel macro define orientaciones nacionales, contenidos mínimos y destrezas fundamentales. La lógica curricular se aproxima más a la cobertura temática que a la demostración de competencias complejas.",
-    meso: "La institución contextualiza de forma limitada: el PCI tiende a organizar la ejecución de contenidos más que a diseñar experiencias institucionales diferenciadas.",
-    micro: "El aula prioriza explicación, ejercitación y verificación de procedimientos. La atención a NEE aparece menos integrada al diseño didáctico ordinario.",
-    math: "Predomina el aprendizaje procedimental. Álgebra, Geometría y Estadística se trabajan como contenidos con menor articulación hacia modelización, lectura de datos y competencias."
-  },
-  {
-    year: "2010",
-    title: "Actualización y Fortalecimiento Curricular",
-    focus: "Respuesta a problemas de desarticulación, desactualización e incongruencia entre contenidos, tiempo y secuencia.",
-    badges: ["Destrezas", "Fortalecimiento", "Articulación"],
-    macro: "El macro currículo reorganiza aprendizajes y fortalece la progresión. El propósito es corregir vacíos y mejorar coherencia entre áreas y años.",
-    meso: "El PCI gana relevancia para secuenciar destrezas y organizar tiempos según necesidades institucionales.",
-    micro: "La planificación de aula empieza a vincular destreza, actividad, recurso y evaluación con mayor claridad que en el modelo anterior.",
-    math: "Matemática se orienta más a resolución de problemas y progresión de destrezas; crece la importancia de relaciones, patrones, medición e interpretación de información."
-  },
-  {
-    year: "2016",
-    title: "Currículo EGB y BGU",
-    focus: "Ajuste curricular flexible, abierto y organizado por destrezas con criterios de desempeño, indicadores y bloques curriculares.",
-    badges: ["DCD", "Bloques", "Flexibilidad"],
-    macro: "El currículo nacional organiza áreas, objetivos, bloques, destrezas con criterios de desempeño e indicadores de evaluación.",
-    meso: "La institución toma decisiones en PEI/PCI para contextualizar, priorizar y articular destrezas según su proyecto educativo.",
-    micro: "El docente diseña experiencias de aula con actividades, recursos, criterios de evaluación, adaptación y retroalimentación.",
-    math: "El área de Matemática se estructura explícitamente en Álgebra y Funciones, Geometría y Medida, y Estadística y Probabilidad, desde EGB hasta BGU."
-  },
-  {
-    year: "2021",
-    title: "Currículo Priorizado con énfasis en competencias",
-    focus: "Priorización de aprendizajes esenciales y recuperación de competencias comunicacionales, matemáticas, digitales y socioemocionales.",
-    badges: ["Priorización", "Competencias", "Aprendizajes esenciales"],
-    macro: "El macro currículo prioriza aprendizajes fundamentales para sostener continuidad educativa y fortalecer competencias clave.",
-    meso: "La institución adapta la priorización según brechas reales de aprendizaje, modalidad de atención y recursos disponibles.",
-    micro: "La clase se enfoca en actividades de alto impacto, evaluación formativa y recuperación de aprendizajes esenciales.",
-    math: "La competencia matemática se expresa en resolver problemas, interpretar información, usar datos y conectar el aprendizaje con situaciones reales."
-  },
-  {
-    year: "2023",
-    title: "Marco Curricular Competencial de Aprendizajes",
-    focus: "Precisa competencias, perfiles de salida y elementos de competencia para orientar la trayectoria educativa.",
-    badges: ["Competencias", "Perfil de salida", "Currículo 2030"],
-    macro: "El nivel macro formula competencias y perfiles de salida como horizonte de aprendizaje para todo el Sistema Educativo Nacional.",
-    meso: "El PCI debe traducir las competencias en proyectos, secuencias, indicadores institucionales y contextos de aplicación.",
-    micro: "La planificación de aula evidencia desempeño mediante resolución de problemas, inclusión, retroalimentación y transferencia a contextos reales.",
-    math: "Matemática se proyecta como lenguaje para modelar, argumentar, tomar decisiones, leer datos, comparar escenarios y resolver problemas complejos."
-  }
-];
-
-const ncc = {
+const nccData = {
   macro: {
-    title: "Nivel Macro: política curricular nacional",
-    text: "Define el marco común obligatorio: fines educativos, perfiles de salida, competencias, áreas, bloques, destrezas, indicadores y orientaciones de evaluación. En Matemática, establece qué aprendizajes deben desarrollarse y cómo se relacionan con el perfil del bachiller.",
-    points: [
-      "Responsable principal: Ministerio de Educación.",
-      "Producto curricular: currículo nacional, currículo priorizado y marco competencial.",
-      "Decisión clave: qué Matemática debe aprenderse y con qué nivel de profundidad.",
-      "Riesgo: una reforma puede quedarse en documento si no llega al PCI y al aula."
+    title: "Nivel macro: política curricular nacional",
+    text: "El Ministerio de Educación establece el currículo nacional obligatorio, los objetivos, las destrezas, los criterios de evaluación y los aprendizajes comunes para el Sistema Nacional de Educación.",
+    bullets: [
+      "Orienta la política educativa nacional.",
+      "Define el marco común de aprendizajes para el país.",
+      "En Matemática, establece bloques, competencias, criterios e indicadores."
     ]
   },
   meso: {
-    title: "Nivel Meso: modelización institucional del PCI",
-    text: "Contextualiza el currículo nacional en el PEI y PCI. La institución decide cómo secuenciar, priorizar y adaptar las destrezas considerando territorio, recursos, brechas de aprendizaje, identidad institucional y necesidades del estudiantado.",
-    points: [
-      "Responsable principal: institución educativa y equipos docentes.",
-      "Producto curricular: PCI, PCA, proyectos interdisciplinarios y acuerdos de evaluación.",
-      "Decisión clave: cómo convertir las competencias nacionales en experiencias institucionales.",
-      "Ejemplo rural: geometría aplicada a áreas de cultivo; ejemplo urbano: estadística para movilidad y consumo."
+    title: "Nivel meso: contextualización institucional",
+    text: "Cada institución adapta el currículo mediante la Planificación Curricular Institucional y la Planificación Curricular Anual, considerando identidad, entorno, recursos y características de sus estudiantes.",
+    bullets: [
+      "Contextualiza sin romper el currículo nacional.",
+      "Permite diferenciar una institución rural de una urbana.",
+      "Conecta Matemática con problemas reales del contexto."
     ]
   },
   micro: {
-    title: "Nivel Micro: planificación inclusiva de aula",
-    text: "Convierte el currículo en una experiencia concreta. Integra objetivo, actividad, recurso, estrategia, evaluación, retroalimentación y adaptación. En este dashboard se ejemplifica con un sprint para discalculia en funciones lineales.",
-    points: [
-      "Responsable principal: docente.",
-      "Producto curricular: planificación de clase, instrumento de evaluación y adaptación curricular.",
-      "Decisión clave: cómo evidenciar aprendizaje en estudiantes reales.",
-      "Inclusión: apoyos visuales, reducción de carga cognitiva, evaluación flexible y uso de material concreto."
+    title: "Nivel micro: concreción en el aula",
+    text: "El docente concreta la enseñanza en actividades, recursos, estrategias metodológicas, evaluación y adaptaciones curriculares para responder a necesidades reales de aprendizaje.",
+    bullets: [
+      "Convierte destrezas y competencias en experiencias de aprendizaje.",
+      "Integra evaluación formativa e inclusión.",
+      "Permite adaptar el tema de funciones para estudiantes con discalculia."
     ]
   }
 };
+
+const hitos = [
+  {
+    year: "1996",
+    title: "Reforma Curricular de Educación General Básica",
+    tags: ["Destrezas", "Ejes transversales", "Inicio de modernización"],
+    summary: "Oficializó un currículo de Educación General Básica fundamentado en destrezas y ejes transversales. Fue un avance inicial, pero posteriormente se identificaron problemas de articulación, precisión y evaluación.",
+    math: "Matemática se organizó desde destrezas y contenidos con énfasis procedimental. La relación con Álgebra, Geometría y Estadística era menos explícita que en propuestas posteriores.",
+    macro: "Define una base curricular nacional común.",
+    meso: "La institución aplica el currículo con menor margen de contextualización.",
+    micro: "La clase se centra con frecuencia en procedimientos y ejercicios graduados."
+  },
+  {
+    year: "2010–2011",
+    title: "Actualización y Fortalecimiento Curricular",
+    tags: ["Destrezas", "Indicadores", "Ordenamiento curricular"],
+    summary: "Buscó corregir debilidades de la reforma anterior mediante una organización más clara de habilidades, conocimientos, orientaciones metodológicas e indicadores de evaluación.",
+    math: "Mejora la progresión de aprendizajes matemáticos y la relación entre destrezas, conocimientos y evaluación.",
+    macro: "Fortalece la coherencia entre niveles y aprendizajes esperados.",
+    meso: "Permite organizar mejor la planificación institucional.",
+    micro: "Orienta al docente con indicadores más claros para evaluar."
+  },
+  {
+    year: "2011",
+    title: "Implementación del Bachillerato General Unificado",
+    tags: ["BGU", "Tronco común", "Continuidad educativa"],
+    summary: "El Acuerdo Ministerial Nro. 242-11 implementó el Bachillerato General Unificado para brindar una formación general articulada con Educación General Básica y superar la fragmentación por especializaciones.",
+    math: "Fortalece la continuidad de Matemática como área básica dentro del tronco común del Bachillerato.",
+    macro: "Unifica la estructura del Bachillerato.",
+    meso: "La institución reorganiza su oferta y planificación anual.",
+    micro: "El docente articula conocimientos de EGB con exigencias de Bachillerato."
+  },
+  {
+    year: "2016",
+    title: "Currículo de Matemática EGB y BGU",
+    tags: ["Álgebra", "Geometría", "Estadística"],
+    summary: "Presentó una propuesta más abierta y flexible, orientada a atender la diversidad de contextos educativos mediante destrezas con criterios de desempeño e indicadores.",
+    math: "Matemática se organiza en tres bloques: Álgebra y funciones, Geometría y medida, y Estadística y probabilidad.",
+    macro: "Establece bloques curriculares claros y destrezas con criterios de desempeño.",
+    meso: "El PCI contextualiza los bloques según necesidades institucionales.",
+    micro: "La planificación de aula conecta destreza, actividad, recurso, evaluación e inclusión."
+  },
+  {
+    year: "2023",
+    title: "Enfoque competencial y Marco Curricular Competencial",
+    tags: ["Competencias", "Perfil de salida", "Currículo 2030"],
+    summary: "Fortalece el enfoque competencial, priorizando competencias comunicacionales, matemáticas, digitales y socioemocionales, con énfasis en la aplicación de aprendizajes a contextos reales.",
+    math: "La Matemática se orienta hacia resolución de problemas, modelización, interpretación de datos, pensamiento crítico y toma de decisiones.",
+    macro: "Precisa competencias y perfiles de salida.",
+    meso: "Exige contextualizar competencias en proyectos institucionales coherentes.",
+    micro: "Demanda experiencias de aula con evidencia de desempeño y evaluación competencial."
+  }
+];
 
 const mathRows = [
   {
-    hito: "1996",
-    carga: "Organización más rígida del tiempo curricular; prioridad en cubrir contenidos mínimos y secuencias prescritas. La carga se interpreta como tiempo para avanzar temas.",
-    algebra: "Operaciones, expresiones y procedimientos algebraicos con énfasis mecánico.",
-    geometria: "Figuras, medidas y fórmulas trabajadas de forma principalmente operacional.",
-    estadistica: "Menor presencia curricular y baja integración con lectura crítica de datos.",
-    ncc: "Macro prescribe; Meso organiza cumplimiento; Micro ejecuta contenidos y ejercicios."
+    hito: "Reforma de 1996",
+    organizacion: "Destrezas y ejes transversales.",
+    lectura: "Fue un avance inicial, pero presentó limitaciones de precisión, evaluación y articulación.",
+    carga: "Carga y organización más rígidas; menor precisión por bloques matemáticos.",
+    niveles: "Macro: currículo nacional inicial. Meso: aplicación institucional general. Micro: énfasis en ejercicios y procedimientos."
   },
   {
-    hito: "2010",
-    carga: "Mejora la articulación entre contenidos, destrezas y tiempo disponible; se corrigen incongruencias detectadas en el modelo anterior.",
-    algebra: "Relaciones, patrones y resolución de problemas con mayor progresión.",
-    geometria: "Medición y razonamiento espacial conectados con problemas prácticos.",
-    estadistica: "Mayor visibilidad de representación e interpretación de información.",
-    ncc: "Macro fortalece destrezas; Meso secuencia; Micro relaciona destreza-actividad-evaluación."
+    hito: "Actualización 2010–2011",
+    organizacion: "Destrezas, conocimientos, metodología e indicadores.",
+    lectura: "Buscó ordenar el currículo y acercarlo a la práctica docente.",
+    carga: "Mejor articulación entre tiempo, destrezas e indicadores de evaluación.",
+    niveles: "Macro: actualización curricular. Meso: planificación más organizada. Micro: evaluación con indicadores."
   },
   {
-    hito: "2016",
-    carga: "BGU organizado en períodos semanales; Bachillerato en Ciencias mantiene 40 períodos y Técnico 45, con períodos institucionales adicionales según modalidad.",
-    algebra: "Bloque 1: Álgebra y Funciones. Relaciones, funciones, modelación y análisis simbólico.",
-    geometria: "Bloque 2: Geometría y Medida. Magnitudes, formas, representación y solución de problemas.",
-    estadistica: "Bloque 3: Estadística y Probabilidad. Lectura de datos, análisis, probabilidad e interpretación.",
-    ncc: "Macro define bloques y DCD; Meso contextualiza PCI; Micro planifica desempeño evaluable."
+    hito: "BGU 2011",
+    organizacion: "Tronco común para Bachillerato.",
+    lectura: "Fortaleció la continuidad entre Educación General Básica y Bachillerato.",
+    carga: "Matemática se mantiene como área estructural del Bachillerato común.",
+    niveles: "Macro: unificación del Bachillerato. Meso: reorganización institucional. Micro: continuidad de aprendizajes."
   },
   {
-    hito: "2021",
-    carga: "Priorización de aprendizajes esenciales; el tiempo se usa estratégicamente para recuperar y consolidar competencias clave.",
-    algebra: "Funciones y relaciones usadas para resolver problemas contextualizados.",
-    geometria: "Áreas, escalas, medición y representación espacial en situaciones reales.",
-    estadistica: "Gráficos, tablas y datos para comprensión de fenómenos cotidianos.",
-    ncc: "Macro prioriza; Meso identifica brechas; Micro diseña actividades de alto impacto."
+    hito: "Currículo 2016",
+    organizacion: "Tres bloques: Álgebra y funciones, Geometría y medida, Estadística y probabilidad.",
+    lectura: "Aportó mayor claridad, secuencia y flexibilidad al aprendizaje matemático.",
+    carga: "El Acuerdo MINEDUC-ME-2016-00020-A estableció Matemática en BGU con 5 períodos en primero, 4 en segundo y 3 en tercero.",
+    niveles: "Macro: bloques y DCD. Meso: PCI contextualizado. Micro: planificación con recursos, evaluación e inclusión."
   },
   {
-    hito: "2023",
-    carga: "El tiempo curricular se orienta al desarrollo progresivo de competencias, perfiles de salida y evidencias de desempeño.",
-    algebra: "Modelización, análisis funcional, argumentación y toma de decisiones.",
-    geometria: "Geometría aplicada a problemas territoriales, productivos, tecnológicos y ciudadanos.",
-    estadistica: "Pensamiento crítico con datos, incertidumbre, probabilidad y ciudadanía digital.",
-    ncc: "Macro define competencias; Meso diseña trayectorias; Micro evidencia desempeño e inclusión."
+    hito: "Enfoque 2023",
+    organizacion: "Competencias matemáticas, comunicacionales, digitales y socioemocionales.",
+    lectura: "Orientó la Matemática hacia la resolución de problemas y la toma de decisiones.",
+    carga: "El Acuerdo MINEDUC-MINEDUC-2023-00008-A estableció para Bachillerato en Ciencias 5 períodos en primero, 5 en segundo y 4 en tercero.",
+    niveles: "Macro: competencias y perfil de salida. Meso: proyectos contextualizados. Micro: evidencia de desempeño competencial."
   }
 ];
 
-const concretion = {
-  rural: {
-    title: "Modelización institucional: PCI rural",
-    text: "Estándar de aprendizaje contextualizado: el estudiante utiliza geometría, proporcionalidad y medición para calcular áreas de cultivo, estimar producción y analizar costos básicos de una actividad agrícola local.",
-    blocks: [
-      ["Álgebra y funciones", "Modelar relación entre superficie cultivada y producción estimada."],
-      ["Geometría y medida", "Calcular áreas de parcelas rectangulares, triangulares o compuestas."],
-      ["Estadística", "Registrar datos de producción, comparar promedios y representar resultados."],
-      ["Evidencia", "Plano simple del terreno, tabla de datos y explicación de decisiones."],
-      ["Recursos", "Cinta métrica, croquis, hojas cuadriculadas, calculadora y datos del entorno."],
-      ["Evaluación", "Rúbrica: precisión de cálculo, interpretación, argumentación y pertinencia contextual."]
-    ]
-  },
-  urbano: {
-    title: "Modelización institucional: PCI urbano",
-    text: "Estándar de aprendizaje contextualizado: el estudiante interpreta funciones, porcentajes y datos estadísticos para tomar decisiones sobre movilidad, consumo digital, emprendimiento escolar o presupuesto familiar.",
-    blocks: [
-      ["Álgebra y funciones", "Comparar planes de internet, transporte o ventas mediante funciones lineales."],
-      ["Geometría y medida", "Usar escalas, rutas y distancias en mapas urbanos."],
-      ["Estadística", "Analizar encuestas de consumo, movilidad o uso de tecnología."],
-      ["Evidencia", "Gráfico, tabla comparativa y recomendación sustentada."],
-      ["Recursos", "Datos de barrio, formularios, calculadora, hoja de cálculo y mapas."],
-      ["Evaluación", "Rúbrica: lectura de datos, modelo matemático, decisión y comunicación."]
-    ]
-  },
-  sprint: {
-    title: "Sprint de planificación: discalculia en funciones lineales",
-    text: "Tema: funciones lineales. Necesidad educativa: discalculia. Objetivo accesible: reconocer una función como relación entre dos variables usando objetos, tabla, gráfico y explicación verbal antes de pasar a la expresión simbólica.",
-    blocks: [
-      ["Momento 1 · Activación", "Usar una tienda escolar: cantidad de productos y precio total."],
-      ["Momento 2 · Representación concreta", "Manipular fichas o tarjetas de precio para formar pares cantidad-precio."],
-      ["Momento 3 · Tabla visual", "Completar una tabla con colores: variable independiente y dependiente."],
-      ["Momento 4 · Gráfico guiado", "Ubicar puntos en plano cartesiano con escala marcada y pocos datos."],
-      ["Momento 5 · Verbalización", "Explicar oralmente: si aumenta la cantidad, aumenta el precio."],
-      ["IA especializada", "MagicSchool.ai puede apoyar con sugerencias tipo IEP para ajustar instrucción, evaluación y apoyos visuales."]
-    ]
-  },
-  evaluacion: {
-    title: "Evaluación inclusiva para funciones",
-    text: "La evaluación no mide rapidez de cálculo, sino comprensión de relación funcional, interpretación de datos y comunicación del procedimiento. Se aplican apoyos sin reducir el objetivo esencial.",
-    blocks: [
-      ["Instrumento", "Lista de cotejo + rúbrica breve de desempeño."],
-      ["Criterio 1", "Completa una tabla con al menos tres pares ordenados."],
-      ["Criterio 2", "Ubica puntos con apoyo de escala y colores."],
-      ["Criterio 3", "Interpreta el patrón con lenguaje cotidiano."],
-      ["Criterio 4", "Relaciona la situación con una expresión simple cuando sea posible."],
-      ["Retroalimentación", "Inmediata, visual y centrada en el procedimiento correcto."]
-    ]
-  }
+const innovationContent = {
+  meso: `
+    <h3>Nivel meso: contextualización institucional rural y urbana</h3>
+    <p>El nivel meso no cambia el currículo nacional, sino que lo contextualiza. Así, Matemática deja de enseñarse como un conjunto de procedimientos aislados y se convierte en una herramienta para interpretar la realidad.</p>
+    <div class="cards-2">
+      <article class="info-card">
+        <h4>Zona rural</h4>
+        <p><strong>Estándar:</strong> el estudiante aplica geometría y medida para calcular áreas, perímetros y distribución de espacios productivos.</p>
+        <ul>
+          <li>Cálculo de áreas de cultivo.</li>
+          <li>Medición de terrenos y comparación de parcelas.</li>
+          <li>Estimación de semillas, costos y rendimiento.</li>
+        </ul>
+      </article>
+      <article class="info-card">
+        <h4>Zona urbana</h4>
+        <p><strong>Estándar:</strong> el estudiante utiliza geometría y estadística para analizar espacios, movilidad, consumo y organización de datos.</p>
+        <ul>
+          <li>Cálculo de áreas comunitarias.</li>
+          <li>Análisis de rutas y tiempos de movilidad.</li>
+          <li>Interpretación de datos de consumo y educación financiera.</li>
+        </ul>
+      </article>
+    </div>
+  `,
+  micro: `
+    <h3>Nivel micro: adaptación para discalculia en funciones</h3>
+    <p>La adaptación microcurricular responde al principio de inclusión, porque facilita la comprensión de funciones mediante representaciones visuales, progresivas y contextualizadas.</p>
+    <div class="micro-grid">
+      <article><span>Tema</span>Introducción a funciones lineales.</article>
+      <article><span>Necesidad educativa</span>Dificultad para comprender relaciones numéricas, secuencias y representación simbólica.</article>
+      <article><span>Estrategias</span>Tablas de valores, gráficos con colores, material concreto, ejemplos cotidianos y ejercicios graduados.</article>
+      <article><span>Actividad inicial</span>Relacionar cantidad y costo: “si un cuaderno cuesta 1 dólar, ¿cuánto cuestan 2, 3 o 4 cuadernos?”.</article>
+      <article><span>Representación visual</span>Completar una tabla y ubicar pares ordenados en el plano cartesiano con apoyo de colores.</article>
+      <article><span>Evaluación diferenciada</span>Permitir uso de tabla, calculadora básica, explicación oral y ejercicios con menor carga simbólica.</article>
+    </div>
+  `,
+  prompts: `
+    <h3>Prompts aplicados y finalidad académica</h3>
+    <p>Las herramientas de IA se utilizaron como apoyo metodológico, pero la decisión pedagógica final corresponde al equipo.</p>
+    <div class="prompt-block"><strong>ChatGPT nivel meso:</strong><br>“Propón un estándar de aprendizaje de Matemática para una zona rural donde se use la geometría aplicada al cálculo de áreas de cultivo, versus una zona urbana.”</div>
+    <div class="prompt-block"><strong>MagicSchool.ai / ChatGPT nivel micro:</strong><br>“Diseña una adaptación microcurricular para un estudiante con discalculia en el tema de funciones. Incluye actividades visuales, recursos concretos, evaluación diferenciada y una secuencia progresiva de aprendizaje.”</div>
+  `
 };
 
 const entropyData = [
-  { year: 1996, c: 2.3, f: 1.4, note: "Baja flexibilidad y complejidad centrada en cobertura." },
-  { year: 2010, c: 3.1, f: 2.5, note: "Mayor articulación y fortalecimiento de destrezas." },
-  { year: 2016, c: 4.1, f: 3.4, note: "Bloques, DCD, indicadores y currículo flexible." },
-  { year: 2021, c: 4.5, f: 4.1, note: "Priorización por competencias y aprendizajes esenciales." },
-  { year: 2023, c: 5.0, f: 4.8, note: "Competencias, perfiles de salida y elementos de competencia." }
+  { year: "1996", x: 2.0, y: 1.6, note: "Menor flexibilidad; currículo con limitaciones de precisión y articulación." },
+  { year: "2010–2011", x: 3.0, y: 2.7, note: "Aumenta la organización curricular y la claridad de indicadores." },
+  { year: "2011", x: 3.3, y: 3.0, note: "El BGU fortalece continuidad y tronco común." },
+  { year: "2016", x: 4.2, y: 3.8, note: "Bloques curriculares y destrezas con criterios de desempeño." },
+  { year: "2023", x: 4.9, y: 4.8, note: "Mayor complejidad y flexibilidad por enfoque competencial." }
 ];
 
-const aiTools = [
-  ["ChatGPT", "Organización del análisis, matriz comparativa, redacción crítica y mejora del diseño del dashboard.", "Evidencia: captura del prompt y fragmento del resultado usado."],
-  ["Perplexity AI", "Verificación de fuentes oficiales del Ministerio de Educación y contraste de hitos curriculares.", "Evidencia: capturas con enlaces oficiales consultados."],
-  ["MagicSchool.ai", "Sugerencias de adaptación para estudiante con discalculia en funciones lineales.", "Evidencia: captura de IEP Suggestion o adaptación generada."],
-  ["Napkin.ai", "Conceptualización visual del gráfico de entropía curricular: complejidad vs. flexibilidad.", "Evidencia: captura o exportación del esquema base."],
-  ["Consensus.app", "Búsqueda de literatura sobre implementación curricular, rendimiento y brechas entre reforma y aula.", "Evidencia: artículos guardados y síntesis breve."],
-  ["Claude.ai Artifacts", "Referencia técnica para prototipar dashboards interactivos en HTML/React.", "Evidencia: captura del prototipo o comparación de estructura."]
+const aiRows = [
+  ["Hitos curriculares y Matemática", "ChatGPT y Perplexity AI", "Organización comparativa y verificación en fuentes oficiales.", "Captura del prompt y enlaces consultados."],
+  ["Nivel meso", "ChatGPT", "Propuesta de contextualización rural y urbana.", "Captura del prompt y tabla adaptada."],
+  ["Nivel micro", "MagicSchool.ai y ChatGPT", "Adaptación para discalculia en funciones.", "Captura de la sugerencia IEP o adaptación generada."],
+  ["Dashboard", "Claude.ai, HTML, CSS, JavaScript y GitHub Pages", "Diseño, codificación y publicación del recurso interactivo.", "Captura del prototipo, repositorio y enlace publicado."],
+  ["Gráfico de entropía", "Napkin.ai", "Elaboración visual de complejidad vs. flexibilidad.", "Imagen exportada o captura del gráfico."],
+  ["Reflexión crítica", "Consensus.app y Perplexity AI", "Búsqueda académica y análisis crítico sobre reformas y aprendizaje.", "Captura de artículos y síntesis del equipo."],
+  ["Publicación", "GitHub Pages", "Publicación del dashboard interactivo en un enlace web.", "Enlace publicado: https://jcujilema99.github.io/DashboardG7/"]
 ];
 
-const sources = [
-  ["Currículo de Matemática · Ministerio de Educación", "Bloques de Álgebra y Funciones, Geometría y Medida, Estadística y Probabilidad; pensamiento crítico y resolución de problemas.", "https://educacion.gob.ec/curriculo-matematica/"],
-  ["Malla Curricular BGU · Ministerio de Educación", "Organización de Bachillerato en Ciencias con 40 períodos semanales y Bachillerato Técnico con 45 períodos.", "https://educacion.gob.ec/malla-curricular-bachillerato-general-unificado/"],
-  ["Currículo Priorizado", "Énfasis en competencias comunicacionales, matemáticas, digitales y socioemocionales.", "https://educacion.gob.ec/curriculo-priorizado/"],
-  ["Marco Curricular Competencial 2023", "Competencias, perfiles de salida y elementos de competencia del Sistema Educativo Nacional.", "https://educacion.gob.ec/marco-curricular-competencial-de-aprendizajes/"],
-  ["PISA-D Ecuador · INEVAL", "Base para reflexionar sobre brechas entre currículo, implementación y rendimiento.", "https://evaluaciones.evaluacion.gob.ec/BI/educacion-en-ecuador-resultados-de-pisa-para-el-desarrollo/"],
-  ["Literatura de implementación curricular", "Soporte para explicar que una reforma requiere formación docente, recursos y evaluación alineada.", "https://journals.sagepub.com/doi/abs/10.1177/2158244015581018"]
+const references = [
+  ["González, J., Castillo-Canales, D., Creamer, M., & Ramos Jarrin, M. (2023). Misalignments and Incoherencies within Ecuador’s Education System: How Well Are Key Actors and Public Efforts Aligned towards Better Learning Outcomes? Research on Improving Systems of Education (RISE).", "https://doi.org/10.35489/BSG-RISE-WP_2023/137"],
+  ["Herrera-Pavo, M. Á., Jaramillo-Baquerizo, C., & Valencia, V. H. (2025). Ecuador: Inserting the Country into the PISA Experience. En N. Crato & H. A. Patrinos (Eds.), Improving National Education Systems After COVID-19: Moving Forward After PIRLS 2021 and PISA 2022 (pp. 37-50). Springer Nature Switzerland.", "https://doi.org/10.1007/978-3-031-69284-0_3"],
+  ["Ministerio de Educación del Ecuador. (2010). Actualización y Fortalecimiento Curricular de la Educación General Básica.", "https://educacion.gob.ec/wp-content/uploads/downloads/2013/03/ACLL.pdf"],
+  ["Ministerio de Educación del Ecuador. (2011). Acuerdo Ministerial Nro. 242-11. Normativa para la implementación del nuevo currículo del Bachillerato.", "https://educacion.gob.ec/wp-content/uploads/downloads/2014/02/ACUERDO-242-11.pdf"],
+  ["Ministerio de Educación del Ecuador. (2016a). Currículo de EGB y BGU. Área de Matemática.", "https://educacion.gob.ec/wp-content/uploads/downloads/2016/03/M1.pdf"],
+  ["Ministerio de Educación del Ecuador. (2016b). Instructivo: planificaciones curriculares para el Sistema Nacional de Educación.", "https://www.educacion.gob.ec/wp-content/uploads/downloads/2016/03/planificaciones-curriculares.pdf"],
+  ["Ministerio de Educación del Ecuador. (2016). Acuerdo Nro. MINEDUC-ME-2016-00020-A. Currículos de Educación General Básica y Bachillerato General Unificado.", "https://www.educacion.gob.ec/wp-content/uploads/downloads/2016/04/codificacion-acuerdo_mineduc-me-2016-00020.pdf"],
+  ["Ministerio de Educación del Ecuador. (2023). Acuerdo Nro. MINEDUC-MINEDUC-2023-00008-A.", "https://educacion.gob.ec/wp-content/uploads/downloads/2023/03/MINEDUC-MINEDUC-2023-00008-A.pdf"],
+  ["Ministerio de Educación del Ecuador. (2023). Acuerdo Nro. MINEDUC-MINEDUC-2023-00086-A. Marco Curricular Competencial de Aprendizajes.", "https://educacion.gob.ec/wp-content/uploads/downloads/2023/11/MINEDUC-MINEDUC-2023-00086-A.pdf"]
 ];
 
-let chartProgress = 0;
-let chartTimer = null;
-let plottedPoints = [];
+let chartProgress = 1;
+let chartPoints = [];
 
-window.addEventListener("DOMContentLoaded", () => {
-  renderTimeline(0);
+document.addEventListener("DOMContentLoaded", () => {
   renderNcc("macro");
-  renderMathTable();
-  renderConcretion("rural");
-  renderAiTools();
-  renderSources();
-  setupEvents();
-  setupReveal();
-  setupNavigationObserver();
-  updateSimulator();
-  animateChart();
+  renderTimeline(0);
+  renderMathTable(mathRows);
+  renderInnovation("meso");
+  renderAiTable();
+  renderReferences();
+  drawEntropyChart(1);
+  setupInteractions();
+  setupNavSpy();
 });
 
-function renderTimeline(activeIndex) {
-  const years = document.getElementById("timelineYears");
-  const detail = document.getElementById("timelineDetail");
-  years.innerHTML = hitos.map((h, index) => `
-    <button class="year-btn ${index === activeIndex ? "active" : ""}" type="button" data-index="${index}">
-      <strong>${h.year}</strong><span>${h.title}</span>
+function renderNcc(key) {
+  const data = nccData[key];
+  document.getElementById("nccDetail").innerHTML = `
+    <h3>${data.title}</h3>
+    <p>${data.text}</p>
+    <ul>${data.bullets.map(item => `<li>${item}</li>`).join("")}</ul>
+  `;
+  document.querySelectorAll(".ncc-node").forEach(node => node.classList.toggle("active", node.dataset.ncc === key));
+}
+
+function renderTimeline(index) {
+  const tabs = document.getElementById("timelineTabs");
+  const content = document.getElementById("timelineContent");
+  tabs.innerHTML = hitos.map((hito, i) => `
+    <button class="timeline-tab ${i === index ? "active" : ""}" data-index="${i}">
+      <strong>${hito.year}</strong>
+      <span>${hito.title}</span>
     </button>
   `).join("");
-  const h = hitos[activeIndex];
-  detail.innerHTML = `
-    <p class="eyebrow">${h.focus}</p>
-    <h3>${h.year} · ${h.title}</h3>
-    <div class="badges">${h.badges.map(b => `<span class="badge">${b}</span>`).join("")}</div>
-    <p><strong>Lectura matemática:</strong> ${h.math}</p>
-    <div class="detail-grid">
-      <article><strong>Macro</strong><p>${h.macro}</p></article>
-      <article><strong>Meso</strong><p>${h.meso}</p></article>
-      <article><strong>Micro</strong><p>${h.micro}</p></article>
-    </div>
+  const hito = hitos[index];
+  content.innerHTML = `
+    <p class="eyebrow">Hito ${index + 1} de 5</p>
+    <h3>${hito.year} · ${hito.title}</h3>
+    <div class="badge-row">${hito.tags.map(tag => `<span class="badge">${tag}</span>`).join("")}</div>
+    <p>${hito.summary}</p>
+    <ul>
+      <li><strong>Pertinencia matemática:</strong> ${hito.math}</li>
+      <li><strong>Macro:</strong> ${hito.macro}</li>
+      <li><strong>Meso:</strong> ${hito.meso}</li>
+      <li><strong>Micro:</strong> ${hito.micro}</li>
+    </ul>
   `;
-  document.querySelectorAll(".year-btn").forEach(btn => {
-    btn.addEventListener("click", () => renderTimeline(Number(btn.dataset.index)));
-  });
+  document.querySelectorAll(".timeline-tab").forEach(btn => btn.addEventListener("click", () => renderTimeline(Number(btn.dataset.index))));
 }
 
-function renderNcc(level) {
-  const panel = document.getElementById("nccPanel");
-  const item = ncc[level];
-  panel.innerHTML = `
-    <h3>${item.title}</h3>
-    <p>${item.text}</p>
-    <ul>${item.points.map(p => `<li>${p}</li>`).join("")}</ul>
-  `;
-  document.querySelectorAll(".flow-node").forEach(btn => {
-    btn.classList.toggle("active", btn.dataset.level === level);
-  });
-}
-
-function renderMathTable() {
-  const tbody = document.getElementById("mathTableBody");
-  const q = document.getElementById("mathSearch")?.value.toLowerCase().trim() || "";
-  const year = document.getElementById("mathFilter")?.value || "todos";
-  const filtered = mathRows.filter(row => {
-    const matchYear = year === "todos" || row.hito === year;
-    const text = Object.values(row).join(" ").toLowerCase();
-    return matchYear && text.includes(q);
-  });
-  tbody.innerHTML = filtered.map(row => `
+function renderMathTable(rows) {
+  document.getElementById("mathTableBody").innerHTML = rows.map(row => `
     <tr>
       <td><strong>${row.hito}</strong></td>
+      <td>${row.organizacion}</td>
+      <td>${row.lectura}</td>
       <td>${row.carga}</td>
-      <td>${row.algebra}</td>
-      <td>${row.geometria}</td>
-      <td>${row.estadistica}</td>
-      <td>${row.ncc}</td>
+      <td>${row.niveles}</td>
     </tr>
   `).join("");
 }
 
-function renderConcretion(tab) {
-  const panel = document.getElementById("concretionPanel");
-  const data = concretion[tab];
-  panel.innerHTML = `
-    <h3>${data.title}</h3>
-    <p>${data.text}</p>
-    <div class="concretion-grid">
-      ${data.blocks.map(([title, text]) => `
-        <article class="concretion-mini"><strong>${title}</strong><p>${text}</p></article>
-      `).join("")}
-    </div>
-  `;
-  document.querySelectorAll(".tab-btn").forEach(btn => btn.classList.toggle("active", btn.dataset.tab === tab));
+function renderInnovation(key) {
+  document.getElementById("innovationPanel").innerHTML = innovationContent[key];
+  document.querySelectorAll("#innovationTabs button").forEach(btn => btn.classList.toggle("active", btn.dataset.innovation === key));
 }
 
-function renderAiTools() {
-  document.getElementById("aiGrid").innerHTML = aiTools.map(([name, use, evidence]) => `
-    <article><h3>${name}</h3><p>${use}</p><small><strong>Evidencia:</strong> ${evidence}</small></article>
+function renderAiTable() {
+  document.getElementById("aiTableBody").innerHTML = aiRows.map(row => `
+    <tr>${row.map(cell => `<td>${cell}</td>`).join("")}</tr>
   `).join("");
 }
 
-function renderSources() {
-  document.getElementById("sourcesGrid").innerHTML = sources.map(([title, note, url]) => `
-    <article class="source-card"><strong>${title}</strong><p>${note}</p><a href="${url}" target="_blank" rel="noopener noreferrer">Abrir fuente</a></article>
+function renderReferences() {
+  document.getElementById("referencesList").innerHTML = references.map(([title, url]) => `
+    <article class="ref-item">
+      <strong>${title}</strong>
+      <a href="${url}" target="_blank" rel="noopener noreferrer">${url}</a>
+    </article>
   `).join("");
 }
 
-function setupEvents() {
-  const menuBtn = document.getElementById("menuBtn");
-  const mainNav = document.getElementById("mainNav");
-  menuBtn.addEventListener("click", () => {
-    mainNav.classList.toggle("open");
-    document.body.classList.toggle("nav-open");
+function setupInteractions() {
+  const menuButton = document.getElementById("menuButton");
+  const navLinks = document.getElementById("navLinks");
+  const topButton = document.getElementById("topButton");
+  const mathSearch = document.getElementById("mathSearch");
+  const chartCanvas = document.getElementById("entropyChart");
+
+  menuButton.addEventListener("click", () => {
+    navLinks.classList.toggle("open");
+    menuButton.setAttribute("aria-expanded", navLinks.classList.contains("open"));
   });
-  document.querySelectorAll(".main-nav a").forEach(link => {
-    link.addEventListener("click", () => {
-      mainNav.classList.remove("open");
-      document.body.classList.remove("nav-open");
+
+  navLinks.querySelectorAll("a").forEach(link => link.addEventListener("click", () => navLinks.classList.remove("open")));
+
+  document.querySelectorAll(".ncc-node").forEach(btn => btn.addEventListener("click", () => renderNcc(btn.dataset.ncc)));
+  document.querySelectorAll("#innovationTabs button").forEach(btn => btn.addEventListener("click", () => renderInnovation(btn.dataset.innovation)));
+
+  mathSearch.addEventListener("input", event => {
+    const query = event.target.value.trim().toLowerCase();
+    const filtered = mathRows.filter(row => Object.values(row).some(value => String(value).toLowerCase().includes(query)));
+    renderMathTable(filtered);
+  });
+
+  document.querySelectorAll(".copy-btn").forEach(btn => {
+    btn.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(btn.dataset.copy);
+        showToast("Prompt copiado");
+      } catch (error) {
+        showToast("No se pudo copiar automáticamente");
+      }
     });
   });
-  document.querySelectorAll("[data-jump]").forEach(btn => {
-    btn.addEventListener("click", () => document.querySelector(btn.dataset.jump).scrollIntoView({ behavior: "smooth" }));
+
+  document.getElementById("animateChart").addEventListener("click", animateChart);
+  document.getElementById("resetChart").addEventListener("click", () => {
+    drawEntropyChart(0.01);
+    showToast("Gráfico reiniciado");
+    setTimeout(animateChart, 250);
   });
-  document.querySelectorAll(".flow-node").forEach(btn => btn.addEventListener("click", () => renderNcc(btn.dataset.level)));
-  document.querySelectorAll(".tab-btn").forEach(btn => btn.addEventListener("click", () => renderConcretion(btn.dataset.tab)));
-  document.getElementById("mathSearch").addEventListener("input", renderMathTable);
-  document.getElementById("mathFilter").addEventListener("change", renderMathTable);
-  document.getElementById("restartChart").addEventListener("click", animateChart);
-  document.getElementById("entropySpeed").addEventListener("input", animateChart);
-  document.getElementById("backTop").addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
-  ["sCurriculum", "sTeacher", "sResources", "sEvaluation"].forEach(id => document.getElementById(id).addEventListener("input", updateSimulator));
-  window.addEventListener("scroll", handleScroll);
-  const canvas = document.getElementById("entropyCanvas");
-  canvas.addEventListener("mousemove", handleChartHover);
-  canvas.addEventListener("mouseleave", () => document.getElementById("chartTooltip").style.display = "none");
+
+  chartCanvas.addEventListener("mousemove", showChartTooltip);
+  chartCanvas.addEventListener("mouseleave", () => document.getElementById("chartTooltip").style.display = "none");
+
+  topButton.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+  window.addEventListener("scroll", () => {
+    updateProgress();
+    topButton.classList.toggle("show", window.scrollY > 650);
+  });
+  updateProgress();
 }
 
-function handleScroll() {
-  const height = document.documentElement.scrollHeight - window.innerHeight;
-  const progress = height > 0 ? (window.scrollY / height) * 100 : 0;
-  document.getElementById("progressBar").style.width = `${progress}%`;
-  document.getElementById("backTop").classList.toggle("show", window.scrollY > 700);
-}
-
-function setupReveal() {
+function setupNavSpy() {
+  const links = document.querySelectorAll(".nav-links a");
+  const sections = [...links].map(link => document.querySelector(link.getAttribute("href"))).filter(Boolean);
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) entry.target.classList.add("visible");
+      if (entry.isIntersecting) {
+        links.forEach(link => link.classList.remove("active"));
+        const active = document.querySelector(`.nav-links a[href="#${entry.target.id}"]`);
+        if (active) active.classList.add("active");
+      }
     });
-  }, { threshold: .14 });
-  document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
-}
-
-function setupNavigationObserver() {
-  const links = [...document.querySelectorAll(".main-nav a")];
-  const sections = links.map(link => document.querySelector(link.getAttribute("href"))).filter(Boolean);
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      links.forEach(l => l.classList.remove("active"));
-      const active = document.querySelector(`.main-nav a[href="#${entry.target.id}"]`);
-      if (active) active.classList.add("active");
-    });
-  }, { rootMargin: "-40% 0px -55% 0px" });
+  }, { rootMargin: "-25% 0px -60% 0px" });
   sections.forEach(section => observer.observe(section));
 }
 
-function updateSimulator() {
-  const c = Number(document.getElementById("sCurriculum").value);
-  const t = Number(document.getElementById("sTeacher").value);
-  const r = Number(document.getElementById("sResources").value);
-  const e = Number(document.getElementById("sEvaluation").value);
-  document.getElementById("oCurriculum").textContent = c;
-  document.getElementById("oTeacher").textContent = t;
-  document.getElementById("oResources").textContent = r;
-  document.getElementById("oEvaluation").textContent = e;
-  const supportAverage = (t + r + e) / 3;
-  const gapPenalty = Math.abs(c - supportAverage) * 4;
-  const score = Math.max(0, Math.min(100, Math.round(((supportAverage / 10) * 100) - gapPenalty)));
-  document.getElementById("resultValue").textContent = `${score}%`;
-  document.getElementById("meterFill").style.width = `${score}%`;
-  const label = score >= 80 ? "Cambio sostenible" : score >= 60 ? "Cambio en desarrollo" : "Brecha de implementación";
-  document.getElementById("resultLabel").textContent = label;
+function updateProgress() {
+  const scrollTop = window.scrollY;
+  const height = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = height > 0 ? (scrollTop / height) * 100 : 0;
+  document.getElementById("progressBar").style.width = `${progress}%`;
+}
+
+function showToast(message) {
+  const toast = document.getElementById("toast");
+  toast.textContent = message;
+  toast.classList.add("show");
+  setTimeout(() => toast.classList.remove("show"), 1800);
 }
 
 function animateChart() {
-  clearInterval(chartTimer);
-  chartProgress = 0;
-  const speed = Number(document.getElementById("entropySpeed")?.value || 3);
-  const step = 0.012 + speed * 0.006;
-  chartTimer = setInterval(() => {
-    chartProgress += step;
-    if (chartProgress >= 1) {
-      chartProgress = 1;
-      clearInterval(chartTimer);
-    }
-    drawEntropyChart(chartProgress);
+  let progress = 0;
+  const timer = setInterval(() => {
+    progress += 0.025;
+    drawEntropyChart(Math.min(progress, 1));
+    if (progress >= 1) clearInterval(timer);
   }, 16);
 }
 
 function drawEntropyChart(progress = 1) {
-  const canvas = document.getElementById("entropyCanvas");
+  chartProgress = progress;
+  const canvas = document.getElementById("entropyChart");
   const ctx = canvas.getContext("2d");
-  const w = canvas.width;
-  const h = canvas.height;
-  const pad = { left: 78, right: 58, top: 70, bottom: 76 };
-  plottedPoints = [];
-  ctx.clearRect(0, 0, w, h);
+  const width = canvas.width;
+  const height = canvas.height;
+  const p = { left: 86, right: 58, top: 64, bottom: 82 };
+  ctx.clearRect(0, 0, width, height);
 
-  const bg = ctx.createLinearGradient(0, 0, w, h);
+  const bg = ctx.createLinearGradient(0, 0, width, height);
   bg.addColorStop(0, "#ffffff");
   bg.addColorStop(1, "#edf6fa");
   ctx.fillStyle = bg;
-  rounded(ctx, 0, 0, w, h, 24);
+  roundRect(ctx, 0, 0, width, height, 26);
   ctx.fill();
 
-  ctx.fillStyle = "rgba(249, 173, 22, .13)";
-  ctx.beginPath();
-  ctx.arc(w - 110, 100, 170, 0, Math.PI * 2);
-  ctx.fill();
-
-  drawGrid(ctx, w, h, pad);
-  drawAxes(ctx, w, h, pad);
+  drawGrid(ctx, width, height, p);
+  drawAxes(ctx, width, height, p);
 
   const visible = entropyData.slice(0, Math.max(1, Math.ceil(entropyData.length * progress)));
-  ctx.strokeStyle = "#f9ad16";
+  chartPoints = visible.map(item => ({
+    ...item,
+    px: map(item.x, 1, 5, p.left, width - p.right),
+    py: map(item.y, 1, 5, height - p.bottom, p.top)
+  }));
+
+  ctx.strokeStyle = "#f5ae21";
   ctx.lineWidth = 5;
-  ctx.lineCap = "round";
   ctx.beginPath();
-  visible.forEach((p, i) => {
-    const x = map(p.c, 1, 5, pad.left, w - pad.right);
-    const y = map(p.f, 1, 5, h - pad.bottom, pad.top);
-    if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
-  });
+  chartPoints.forEach((point, index) => index === 0 ? ctx.moveTo(point.px, point.py) : ctx.lineTo(point.px, point.py));
   ctx.stroke();
 
-  visible.forEach(p => {
-    const x = map(p.c, 1, 5, pad.left, w - pad.right);
-    const y = map(p.f, 1, 5, h - pad.bottom, pad.top);
-    const e = (p.c * p.f).toFixed(1);
-    plottedPoints.push({ ...p, x, y, e });
-
-    ctx.fillStyle = "#053247";
+  chartPoints.forEach(point => {
+    ctx.fillStyle = "#062f43";
     ctx.beginPath();
-    ctx.arc(x, y, 15, 0, Math.PI * 2);
+    ctx.arc(point.px, point.py, 14, 0, Math.PI * 2);
     ctx.fill();
-    ctx.fillStyle = "#f9ad16";
+    ctx.fillStyle = "#f5ae21";
     ctx.beginPath();
-    ctx.arc(x, y, 7, 0, Math.PI * 2);
+    ctx.arc(point.px, point.py, 7, 0, Math.PI * 2);
     ctx.fill();
-
-    ctx.fillStyle = "#053247";
+    ctx.fillStyle = "#062f43";
     ctx.font = "bold 16px Segoe UI, Arial";
-    ctx.fillText(String(p.year), x + 18, y - 12);
-    ctx.fillStyle = "#617487";
+    ctx.fillText(point.year, point.px + 18, point.py - 12);
+    ctx.fillStyle = "#61758b";
     ctx.font = "13px Segoe UI, Arial";
-    ctx.fillText(`E=${e}`, x + 18, y + 7);
+    ctx.fillText(`E=${(point.x * point.y).toFixed(1)}`, point.px + 18, point.py + 8);
   });
 
-  ctx.fillStyle = "#053247";
-  ctx.font = "bold 24px Segoe UI, Arial";
-  ctx.fillText("Entropía curricular 1996–2023", pad.left, 36);
-  ctx.fillStyle = "#617487";
+  ctx.fillStyle = "#062f43";
+  ctx.font = "bold 26px Segoe UI, Arial";
+  ctx.fillText("Gráfico de entropía curricular", p.left, 34);
+  ctx.fillStyle = "#61758b";
   ctx.font = "14px Segoe UI, Arial";
-  ctx.fillText("Escala 1–5 · Elaboración propia: complejidad pedagógica × flexibilidad curricular", pad.left, 58);
+  ctx.fillText("Complejidad pedagógica vs. flexibilidad curricular · Escala cualitativa 1–5", p.left, 56);
 }
 
-function drawGrid(ctx, w, h, pad) {
-  ctx.strokeStyle = "rgba(5, 50, 71, .12)";
-  ctx.fillStyle = "#617487";
+function drawGrid(ctx, width, height, p) {
+  ctx.strokeStyle = "rgba(6,47,67,.13)";
+  ctx.lineWidth = 1;
+  ctx.fillStyle = "#61758b";
   ctx.font = "13px Segoe UI, Arial";
   for (let i = 1; i <= 5; i++) {
-    const x = map(i, 1, 5, pad.left, w - pad.right);
-    const y = map(i, 1, 5, h - pad.bottom, pad.top);
-    ctx.beginPath(); ctx.moveTo(x, pad.top); ctx.lineTo(x, h - pad.bottom); ctx.stroke();
-    ctx.beginPath(); ctx.moveTo(pad.left, y); ctx.lineTo(w - pad.right, y); ctx.stroke();
-    ctx.fillText(i, x - 4, h - pad.bottom + 24);
-    ctx.fillText(i, pad.left - 28, y + 4);
+    const x = map(i, 1, 5, p.left, width - p.right);
+    const y = map(i, 1, 5, height - p.bottom, p.top);
+    ctx.beginPath(); ctx.moveTo(x, p.top); ctx.lineTo(x, height - p.bottom); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(p.left, y); ctx.lineTo(width - p.right, y); ctx.stroke();
+    ctx.fillText(String(i), x - 4, height - p.bottom + 24);
+    ctx.fillText(String(i), p.left - 26, y + 4);
   }
 }
 
-function drawAxes(ctx, w, h, pad) {
-  ctx.strokeStyle = "#053247";
+function drawAxes(ctx, width, height, p) {
+  ctx.strokeStyle = "#062f43";
   ctx.lineWidth = 3;
   ctx.beginPath();
-  ctx.moveTo(pad.left, h - pad.bottom);
-  ctx.lineTo(w - pad.right, h - pad.bottom);
-  ctx.moveTo(pad.left, h - pad.bottom);
-  ctx.lineTo(pad.left, pad.top);
+  ctx.moveTo(p.left, height - p.bottom);
+  ctx.lineTo(width - p.right, height - p.bottom);
+  ctx.moveTo(p.left, height - p.bottom);
+  ctx.lineTo(p.left, p.top);
   ctx.stroke();
-  ctx.fillStyle = "#053247";
+
+  ctx.fillStyle = "#062f43";
   ctx.font = "bold 18px Segoe UI, Arial";
-  ctx.fillText("Complejidad pedagógica", w / 2 - 110, h - 25);
+  ctx.fillText("Complejidad", width / 2 - 50, height - 28);
   ctx.save();
-  ctx.translate(26, h / 2 + 105);
+  ctx.translate(30, height / 2 + 110);
   ctx.rotate(-Math.PI / 2);
-  ctx.fillText("Flexibilidad curricular", 0, 0);
+  ctx.fillText("Flexibilidad", 0, 0);
   ctx.restore();
 }
 
-function handleChartHover(event) {
-  const canvas = event.currentTarget;
+function showChartTooltip(event) {
+  const canvas = document.getElementById("entropyChart");
   const rect = canvas.getBoundingClientRect();
   const scaleX = canvas.width / rect.width;
   const scaleY = canvas.height / rect.height;
   const x = (event.clientX - rect.left) * scaleX;
   const y = (event.clientY - rect.top) * scaleY;
-  const point = plottedPoints.find(p => Math.hypot(p.x - x, p.y - y) < 22);
   const tooltip = document.getElementById("chartTooltip");
-  if (!point) { tooltip.style.display = "none"; return; }
+  const hit = chartPoints.find(point => Math.hypot(point.px - x, point.py - y) < 24);
+
+  if (!hit) {
+    tooltip.style.display = "none";
+    return;
+  }
+
+  tooltip.innerHTML = `<strong>${hit.year}</strong><br>${hit.note}<br><small>Complejidad: ${hit.x} · Flexibilidad: ${hit.y}</small>`;
   tooltip.style.display = "block";
-  tooltip.style.left = `${event.clientX - rect.left + 14}px`;
-  tooltip.style.top = `${event.clientY - rect.top + 14}px`;
-  tooltip.innerHTML = `<strong>${point.year}</strong><br>C=${point.c} · F=${point.f} · E=${point.e}<br>${point.note}`;
+  tooltip.style.left = `${event.clientX - rect.left + 18}px`;
+  tooltip.style.top = `${event.clientY - rect.top + 18}px`;
 }
 
 function map(value, min, max, start, end) {
   return start + ((value - min) * (end - start)) / (max - min);
 }
 
-function rounded(ctx, x, y, width, height, radius) {
-  const r = Math.min(radius, width / 2, height / 2);
+function roundRect(ctx, x, y, w, h, r) {
+  const radius = Math.min(r, w / 2, h / 2);
   ctx.beginPath();
-  ctx.moveTo(x + r, y);
-  ctx.arcTo(x + width, y, x + width, y + height, r);
-  ctx.arcTo(x + width, y + height, x, y + height, r);
-  ctx.arcTo(x, y + height, x, y, r);
-  ctx.arcTo(x, y, x + width, y, r);
+  ctx.moveTo(x + radius, y);
+  ctx.arcTo(x + w, y, x + w, y + h, radius);
+  ctx.arcTo(x + w, y + h, x, y + h, radius);
+  ctx.arcTo(x, y + h, x, y, radius);
+  ctx.arcTo(x, y, x + w, y, radius);
   ctx.closePath();
 }
